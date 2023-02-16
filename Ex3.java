@@ -1,5 +1,4 @@
 import java.util.Scanner;
-// Не удалось реализовать выход из цикла без ошибки, надеюсь на подсказку в фидбэке как лучше сделать
 public class Ex3 {
     public static void main(String[] args) {
         Calc();
@@ -42,10 +41,9 @@ public class Ex3 {
                 return;
         }
         boolean out = false;
-        while (out != true) {
+        while (!out) {
             System.out.println(result);
             op = Input_op();
-            
             num_1 = Input_n();
             switch (op) {
                 case "+":
@@ -60,6 +58,8 @@ public class Ex3 {
                 case "/":
                     result = result / num_1;
                     break;
+                case "":
+                    out = true;
                 
                 default:
                     System.out.printf("Error! Enter correct operator");
