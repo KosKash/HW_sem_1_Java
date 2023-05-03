@@ -1,16 +1,35 @@
+import java.util.Scanner;
+
 public class Ex1 {
     public static void main(String[] args) {
-        System.out.println("Все простые числа от 1 до 1000");
-        for (int i = 2; i < 1000; i++) {
-            boolean flag = false;
-            for (int j = 2; j < i-1; j++) {
-                    if (i % j == 0) {
-                        flag = true;
-                    }
-            }
-            if (flag == false) {
-                System.out.print(i+" ");
-            }
-        }
+    System.out.println("Input N ");
+    int n = Input_n();
+    System.out.println("N Треугольного числа от " + n + " = " + Triang(n));
+    System.out.println("Факториал " + n + " = " + Fact(n));
+    } 
+    public static int Input_n(){
+        Scanner iScanner = new Scanner(System.in);
+        int n = iScanner.nextInt();
+        iScanner.close();
+        return n;
     }
+    public static int Triang(int n){
+        int result = (n*(n+1))/2;
+        return result;
+    }
+    public static int Fact(int n){
+        int num = 1;
+        int result = 1;
+        while (num != n+1){
+            result *= num;
+            num++;
+        } 
+
+    
+    
+        return result;
+    } 
+
 }
+
+
